@@ -11,7 +11,7 @@ Para el desarrollo de este proyecto será necesario utilizar en algún momento u
 
 ## Pasos realizados (Issues / Milestones)
 
-Dentro de la carpeta *[docs](https://github.com/AntonioRev/ListenYourMood/tree/master/docs)* se encuentra un archivo que irá reflejando los pasos que se den en los diferentes hitos. Estos pasos deberán relacionarse con los diferentes [issues](https://github.com/AntonioRev/ListenYourMood/issues) o [milestones](https://github.com/AntonioRev/ListenYourMood/milestones) propuestos en el proyecto.
+Dentro de la carpeta *[docs](https://github.com/AntonioRev/ListenYourMood/tree/master/docs)* se encuentra el archivo [pasos.md](https://github.com/AntonioRev/ListenYourMood/blob/master/docs/pasos.md), que irá reflejando los pasos que se den en los diferentes hitos. Estos pasos deberán relacionarse con los diferentes [issues](https://github.com/AntonioRev/ListenYourMood/issues) o [milestones](https://github.com/AntonioRev/ListenYourMood/milestones) propuestos en el proyecto.
 
 ## Herramientas Necesarias
 En la carpeta *[docs](https://github.com/AntonioRev/ListenYourMood/tree/master/docs)* se aporta [Información complementaria de las herramientas](https://github.com/AntonioRev/ListenYourMood/blob/master/docs/herramientas.md) utilizadas para el desarrollo
