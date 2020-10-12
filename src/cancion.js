@@ -13,6 +13,8 @@ class Cancion {
     }
 
     obtenerPeticion() {
+	//POR IMPLEMENTAR:
+	//Este método realizará una petición al servidor de Spotify con las variables creadas en el constructor y devolverá una lista de reproducción
     }
 
 
