@@ -13,3 +13,5 @@
 3. [Crear la carpeta](https://github.com/AntonioRev/ListenYourMood/issues/6) *[src](https://github.com/AntonioRev/ListenYourMood/tree/master/src)* para guardar archivos con código
 4. [Crear una clase](https://github.com/AntonioRev/ListenYourMood/issues/7) dentro de la carpeta *src*
 5. [Actualizar el archivo](https://github.com/AntonioRev/ListenYourMood/issues/8) [README.md](https://github.com/AntonioRev/ListenYourMood/blob/master/README.md) con las respectivas actualizaciones, como por ejemplo la motivación para usar un lenguaje u otro
+6. Creación de las [Milestones](https://github.com/AntonioRev/ListenYourMood/milestones)
+7. Creación de las [Historias de Usuario](https://github.com/AntonioRev/ListenYourMood/labels/user-stories)
