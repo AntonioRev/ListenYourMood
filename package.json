@@ -1,0 +1,13 @@
+{
+    "name": "ListenYourMood",
+    "author": "Antonio Revelles",
+    "email": "antoniorp1998@gmail.com",
+    "homepage": "https://github.com/AntonioRev/ListenYourMood",
+    "version": "1.1.1",
+    "description": "Escucha una playlist según tu estado de ánimo",
+    "main": "src/cancion.js",
+    "bugs": "https://github.com/AntonioRev/ListenYourMood/issues",
+    "scripts": {
+        "test": "jest"
+    }
+}
