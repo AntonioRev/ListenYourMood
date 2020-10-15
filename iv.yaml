@@ -1,1 +1,4 @@
 entidad: src/cancion.js
+lenguaje: javascript
+test: tests/cancion.test.js
+taskfile: package.json
