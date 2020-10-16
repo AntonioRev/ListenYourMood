@@ -15,3 +15,11 @@
 5. [Actualizar el archivo](https://github.com/AntonioRev/ListenYourMood/issues/8) [README.md](https://github.com/AntonioRev/ListenYourMood/blob/master/README.md) con las respectivas actualizaciones, como por ejemplo la motivación para usar un lenguaje u otro
 6. Creación de las [Milestones](https://github.com/AntonioRev/ListenYourMood/milestones)
 7. Creación de las [Historias de Usuario](https://github.com/AntonioRev/ListenYourMood/labels/user-stories)
+
+## Hito 2
+1. Investigación de las tecnologías adecuadas para usarse en este hito, y [explicación](https://github.com/AntonioRev/ListenYourMood/blob/master/docs/herramientas.md) de por qué se han escogido.
+2. Descarga e instalación [Node](https://nodejs.org/en/), [NPM](https://www.npmjs.com/get-npm), [Jest](https://jestjs.io/en/) y [NVM](https://github.com/nvm-sh/nvm#installing-and-updating).
+3. [Creación](https://github.com/AntonioRev/ListenYourMood/issues/17) de un [fichero para los tests](https://github.com/AntonioRev/ListenYourMood/blob/master/tests/cancion.test.js).
+4. [Creación](https://github.com/AntonioRev/ListenYourMood/issues/18) de un fichero *[taskfile](https://github.com/AntonioRev/ListenYourMood/blob/master/package.json)*.
+5. [Actualizado](https://github.com/AntonioRev/ListenYourMood/issues/16) el fichero *[iv.yaml](https://github.com/AntonioRev/ListenYourMood/blob/master/iv.yaml)*.
+6. [Actualizado](https://github.com/AntonioRev/ListenYourMood/issues/15) el fichero *[README.md](https://github.com/AntonioRev/ListenYourMood/blob/master/README.md)*.
