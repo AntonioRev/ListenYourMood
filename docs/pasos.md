@@ -23,3 +23,11 @@
 4. [Creación](https://github.com/AntonioRev/ListenYourMood/issues/18) de un fichero *[taskfile](https://github.com/AntonioRev/ListenYourMood/blob/master/package.json)*.
 5. [Actualizado](https://github.com/AntonioRev/ListenYourMood/issues/16) el fichero *[iv.yaml](https://github.com/AntonioRev/ListenYourMood/blob/master/iv.yaml)*.
 6. [Actualizado](https://github.com/AntonioRev/ListenYourMood/issues/15) el fichero *[README.md](https://github.com/AntonioRev/ListenYourMood/blob/master/README.md)*.
+
+## Hito 3
+1. Investigación, [documentación](https://github.com/AntonioRev/ListenYourMood/blob/master/docs/imagenesDocker.md) y elección de las imágenes de Docker a usar.
+2. Creación del archivo [Dockerfile](https://github.com/AntonioRev/ListenYourMood/blob/master/Dockerfile) y de los primeros contenedores.
+3. Configuración correcta del archivo Dockerfile (funcionar a nivel de usuario).
+4. Creación de una cuenta en DockerHub y subir la [imagen a Docker](https://hub.docker.com/repository/docker/antoniorev/listenyourmood).
+5. Subir la imagen a GitHub Containter Registry y añadirla como paquete para el proyecto en GitHub.
+6. Actualización del archivo [README.md](https://github.com/AntonioRev/ListenYourMood/blob/master/README.md) con la explicación de lo realizado.
