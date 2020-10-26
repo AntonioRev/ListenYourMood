@@ -62,7 +62,7 @@ Se ha creado un contenedor Docker para la realización de los tests de la aplica
 
 La imagen creada ha sido [subida a DockerHub](https://hub.docker.com/repository/docker/antoniorev/listenyourmood) y linkeada con este proyecto de GitHub, donde cada vez que se hace un *push*, se actualiza el archivo *readme* de DockerHub y se buildea para ver si funciona.
 
-La imagen también se ha añadido a GitHub Containter Registry, y se ha añadido como [paquete del proyecto](https://github.com/users/AntonioRev/packages/container/package/listenyourmood).
+La imagen también se ha añadido a GitHub Containter Registry como forma de subir el contenedor a un registro público centralizado con GitHub, y se ha añadido como [paquete del proyecto](https://github.com/users/AntonioRev/packages/container/package/listenyourmood).
 
 ## Configuración Inicial del proyecto
 La [Configuración inicial](https://github.com/AntonioRev/ListenYourMood/blob/master/docs/ConfiguracionInicial.md) necesaria para el comienzo del proyecto.
