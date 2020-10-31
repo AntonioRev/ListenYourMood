@@ -2,7 +2,7 @@ const Cancion = require('./cancion');
 class Peticion {
     constructor(cancion) {
       this._url = this.crearDireccion(cancion);
-      this_peticion = this.crearPeticion()
+      this._peticion = this.crearPeticion();
       this._playlistObtenida = this.obtenerPlaylistSegunEstadoAnimo();
       
     }
@@ -30,22 +30,27 @@ class Peticion {
     crearDireccion(cancion){
         //Parte de "[HU01]: Como usuario, quiero que se me recomiende una playlist según mi estado de ánimo"
         //Este método creará una dirección para enviar al servidor de Spotify con las variables creadas en el constructor y devolverá una lista de reproducción
-        direccion = "https://api.spotify.com/v1/recommendations?"
-        primervalor=true
+        var direccion = "https://api.spotify.com/v1/recommendations?";
+        var primervalor=true;
         for (var atributo in cancion) {
             if(cancion[atributo] != null){
                 if(primervalor){
-                    direccion.concat("min", atributo, "=",cancion[atributo]);
-                    primervalor=false;
+                    direccion = direccion.concat("min", atributo, "=",cancion[atributo]);
+                    primervalor = false;
                 }
                 else
-                    direccion.concat("&min", atributo, "=",cancion[atributo]);
+                    direccion = direccion.concat("&min", atributo, "=",cancion[atributo]);
             }
             
         }
         
-        console.log(direccion);
         return direccion;
+    }
+
+    crearPeticion(){
+        //Parte de "[HU01]: Como usuario, quiero que se me recomiende una playlist según mi estado de ánimo"
+        //POR IMPLEMENTAR:
+        //Este método creará una peticion para enviar al servidor de Spotify con las variables creadas en el constructor y devolverá una lista de reproducción
     }
 
     obtenerPlaylistSegunEstadoAnimo() {
@@ -68,4 +73,4 @@ class Peticion {
 
 }
 
-module.exports = Cancion;
+module.exports = Peticion;
