@@ -112,30 +112,6 @@ class Cancion {
       this._valence = v;
     }
 
-    crearPeticion(){
-      //Parte de "[HU01]: Como usuario, quiero que se me recomiende una playlist según mi estado de ánimo"
-      //POR IMPLEMENTAR:
-      //Este método creará una petición para enviar al servidor de Spotify con las variables creadas en el constructor y devolverá una lista de reproducción
-    }
-
-    obtenerPlaylistSegunEstadoAnimo() {
-      //Parte de "[HU01]: Como usuario, quiero que se me recomiende una playlist según mi estado de ánimo"
-      //POR IMPLEMENTAR:
-      //Este método realizará una petición al servidor de Spotify y obtendrá un link a la lista de reproducción deseada
-    }
-
-    mostrarPlaylist() {
-      //Parte de "[HU02]: Como usuario quiero que se reproduzca música en la aplicación sin tener que irme a spotify"
-      //POR IMPLEMENTAR:
-      //Este método permitirá ver la playlist recomendada.
-    }
-
-    reproducirPlaylist() {
-      //Parte de "[HU02]: Como usuario quiero que se reproduzca música en la aplicación sin tener que irme a spotify"
-      //POR IMPLEMENTAR:
-      //Este método permitirá reproducir la playlist recomendada.
-    }
-
   }
 
 module.exports = Cancion;
