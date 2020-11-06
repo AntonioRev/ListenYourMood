@@ -1,0 +1,10 @@
+version: 2
+jobs:
+ build:
+   machine: true
+   steps:
+     # construir la imagen de la aplicación
+     - run: docker build -t antoniorev/listenyourmood .
+
+     # correr la imagen
+     - run: docker run -t -v `pwd`:/test antoniorev/listenyourmood
