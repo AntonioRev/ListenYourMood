@@ -11,4 +11,4 @@ jobs:
 
      - run: 
         name: Ejecución de la imagen
-        command: docker run -t -v "`pwd`:/test" antoniorev/listenyourmood
+        command: docker run -t -v `pwd`:/test antoniorev/listenyourmood
