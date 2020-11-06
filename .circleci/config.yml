@@ -3,6 +3,7 @@ jobs:
  build:
    machine: true
    steps:
+     - checkout
      # construir la imagen de la aplicación
      - run: docker build -t antoniorev/listenyourmood .
 
