@@ -1,0 +1,6 @@
+# Imagen de Docker para realización de tests
+Se ha creado un contenedor Docker para la realización de los tests de la aplicación en cualquier ámbito que se desee. Para ello, se ha necesitado una imagen (para correr el contenedor) que fuese [compatible con Node](https://hub.docker.com/_/node). De todas las posibles, se ha elegido la imagen **15.0.1-alpine3.10**, porque las diferencias de tiempo eran insignificantes entre las diferentes imágenes testeadas, y ésta era la de menor tamaño, con 174 MB. Para mayor información y entendimiento del proceso de elección de imagen con respecto a todas las disponibles, consultar el archivo [imagenesDocker.md](https://github.com/AntonioRev/ListenYourMood/blob/master/docs/imagenesDocker.md) en la carpeta docs.
+
+La imagen creada ha sido [subida a DockerHub](https://hub.docker.com/repository/docker/antoniorev/listenyourmood) y linkeada con este proyecto de GitHub, donde cada vez que se hace un *push*, se actualiza el archivo *readme* de DockerHub y se buildea para ver si funciona.
+
+La imagen también se ha añadido a GitHub Containter Registry como forma de subir el contenedor a un registro público centralizado con GitHub, y se ha añadido como [paquete del proyecto](https://github.com/users/AntonioRev/packages/container/package/listenyourmood).
