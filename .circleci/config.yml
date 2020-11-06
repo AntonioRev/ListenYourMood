@@ -10,5 +10,5 @@ jobs:
         command: docker build -t antoniorev/listenyourmood .
 
      - run: 
-        name: Ejecución de la imagen
+        name: Ejecución de la imagen de la aplicación
         command: docker run -t -v `pwd`:/test antoniorev/listenyourmood

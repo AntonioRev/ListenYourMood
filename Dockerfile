@@ -3,7 +3,8 @@ FROM node:15.0.1-alpine3.10
 LABEL version="1.3.1" maintainer="antoniorp1998@gmail.com"
 
 # Creación de usuario y creación de carpeta node_modules (cambiando los respectivos permisos) para poder instalar las dependencias
-RUN adduser -D usutest && \
+RUN npm i -g jest && \
+adduser -D usutest && \
 mkdir node_modules && \
 chmod 755 /node_modules && \
 chown node /node_modules 
