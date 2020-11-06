@@ -62,3 +62,20 @@ test('Debe haber al menos un atributo introducido', () => {
   }
   expect(vacio).toBeFalsy();
 });
+
+test('Deben devolver el mismo valor que se ha definido', () => {
+  cancion_test_2.acousticness     = 0.75;
+  cancion_test_2.danceability     = 0.75;
+  cancion_test_2.energy           = 0.75;
+  cancion_test_2.instrumentalness = 0.75;
+  cancion_test_2.liveness         = 0.75;
+  cancion_test_2.loudness         = 0.75;
+  cancion_test_2.mode             = 0.75;
+  cancion_test_2.popularity       = 0.75;
+  cancion_test_2.speechiness      = 0.75;
+  cancion_test_2.valence          = 0.75;
+
+  for (var atributo in cancion_test_2) {
+    expect(cancion_test_2[atributo]).toBe(0.75);
+  }
+});
