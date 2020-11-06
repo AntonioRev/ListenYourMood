@@ -31,3 +31,15 @@ test('La url es válida', () => {
     for(var a in listaAtributos)
         expect(patron.test(listaAtributos[a])).not.toBeTruthy();
 });
+
+test('Se espera que devuelva el mismo valor que se le ha definido', () => {
+    peticion_test_1.playlistObtenida = "Playlist de prueba";
+    expect(peticion_test_1.playlistObtenida).toBe("Playlist de prueba");
+});
+
+test('Se espera que devuelvan un error los métodos aún no implementados', () => {
+    expect(() => peticion_test_1.crearPeticion()).toThrow( 'not Implemented' );
+    expect(() => peticion_test_1.obtenerPlaylistSegunEstadoAnimo()).toThrow( 'not Implemented' );
+    expect(() => peticion_test_1.mostrarPlaylist()).toThrow( 'not Implemented' );
+    expect(() => peticion_test_1.reproducirPlaylist()).toThrow( 'not Implemented' );
+});
