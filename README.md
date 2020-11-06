@@ -64,6 +64,12 @@ La imagen creada ha sido [subida a DockerHub](https://hub.docker.com/repository/
 
 La imagen también se ha añadido a GitHub Containter Registry como forma de subir el contenedor a un registro público centralizado con GitHub, y se ha añadido como [paquete del proyecto](https://github.com/users/AntonioRev/packages/container/package/listenyourmood).
 
+## Herramientas de integración continua
+Las herramientas de integración continua que se están utilizando son:
+- [TravisCI](https://travis-ci.com/): Es un sistema de integración continua con bastante compatibilidad con GitHub. En este caso, se está utilizando Travis para ejecutar los tests por medio del gestor de tareas de node, *npm*. Se necesita un archivo en el repositorio de la aplicación, *[.travis.yml](https://github.com/antoniorev/ListenYourMood/blob/master/.travis.yml)*, para que se ejecuten los tests. Se están realizando estas pruebas en las versiones 10, 11, 14 y 15 de node. En [esta página](https://docs.travis-ci.com/user/languages/javascript-with-nodejs/) aparecen las buenas prácticas de Travis.
+
+- [CircleCI](https://circleci.com/): Es un sistema de integración continua como Travis, pero con ciertas peculiaridades y mejoras, como escoger las especificaciones de procesador y ram sobre las que queremos que se ejecuten nuestros proyectos o mayor concurrencia de los trabajos que queremos ejecutar. En el caso de nuestra aplicación, usaremos CircleCI para construir y ejecutar el [contenedor Docker](https://github.com/antoniorev/ListenYourMood/blob/master/Dockerfile) diseñado en la práctica anterior (se puede ver en el archivo [config.yml](https://github.com/antoniorev/ListenYourMood/blob/master/.circleci/config.yml), dentro de la carpeta .circleci). Se puede consultar [esta documentación](https://circleci.com/docs/2.0/building-docker-images/) para revisar la sintaxis acerca de cómo construir un contenedor Docker en CircleCI, aunque es bastante intuitiva. Se está utilizando la última versión de CircleCI, la *2.1*, porque es la última y la que incluye más funcionalidades (aunque no se estén usando ahora mismo, podrían ser útiles en el futuro).
+
 ## Configuración Inicial del proyecto
 La [Configuración inicial](https://github.com/AntonioRev/ListenYourMood/blob/master/docs/ConfiguracionInicial.md) necesaria para el comienzo del proyecto.
 
