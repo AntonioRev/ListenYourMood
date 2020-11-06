@@ -4,8 +4,11 @@ jobs:
    machine: true
    steps:
      - checkout
-     # construir la imagen de la aplicación
-     - run: docker build -t antoniorev/listenyourmood .
 
-     # correr la imagen
-     - run: docker run -t -v "`pwd`:/test" antoniorev/listenyourmood
+     - run: 
+        name: construcción de la imagen de la aplicación
+        command: docker build -t antoniorev/listenyourmood .
+
+     - run: 
+        name: Ejecución de la imagen
+        command: docker run -t -v "`pwd`:/test" antoniorev/listenyourmood
