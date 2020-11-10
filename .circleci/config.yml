@@ -2,7 +2,7 @@ version: 2.1
 jobs:
  build:
    docker: 
-      -image: antoniorev/listenyourmood:latest
+      - image: antoniorev/listenyourmood:latest
    steps:
      - checkout
      - run: 
