@@ -1,9 +1,8 @@
 language: node_js
 node_js:
-  - "10"
-  - "11"
-  - "14"
-  - "15"
+  - "node" #La última versión estable
+  - "lts/*" #La útlima versión LTS (Soporte a Largo Plazo)
+  - "14.13.1" #La versión que utilizo localmente
 before_install:
   - npm install
 script: npm run test
