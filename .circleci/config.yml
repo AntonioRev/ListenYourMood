@@ -1,9 +1,10 @@
 version: 2.1
 jobs:
  build:
-   docker: antoniorev/listenyourmood
+   docker: 
+      -image: antoniorev/listenyourmood:latest
    steps:
      - checkout
      - run: 
         name: Ejecución de la imagen de la aplicación
-        command: npm run test
+        command: docker run -t -v `pwd`:/test antoniorev/listenyourmood
