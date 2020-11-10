@@ -22,4 +22,4 @@ RUN npm ci && rm package*.json
 # Cambio de usuario y ejecución de los tests
 USER usutest
 WORKDIR /test
-CMD ["grunt",8 "test"]
+CMD ["grunt", "test"]

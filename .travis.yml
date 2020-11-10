@@ -3,6 +3,7 @@ node_js:
   - "node" #La última versión estable
   - "lts/*" #La útlima versión LTS (Soporte a Largo Plazo)
   - "14.13.1" #La versión que utilizo localmente
+
 before_install:
-  - npm install
-script: npm run test
+  - npm update npm@6.14.8
+script: grunt test
