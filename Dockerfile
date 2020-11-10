@@ -4,6 +4,8 @@ LABEL version="1.3.1" maintainer="antoniorp1998@gmail.com"
 
 # Creación de usuario y creación de carpeta node_modules (cambiando los respectivos permisos) para poder instalar las dependencias
 RUN npm i -g jest && \
+npm i -g grunt && \
+npm i -g grunt-run && \
 adduser -D usutest && \
 mkdir node_modules && \
 chmod 755 /node_modules && \
@@ -14,9 +16,10 @@ WORKDIR /node_modules
 USER node
 COPY --chown=node package.json ./ 
 COPY --chown=node package-lock.json ./
+COPY --chown=node Gruntfile.js ./
 RUN npm ci && rm package*.json
 
 # Cambio de usuario y ejecución de los tests
 USER usutest
 WORKDIR /test
-CMD ["npm", "run", "test"]
+CMD ["grunt",8 "test"]
