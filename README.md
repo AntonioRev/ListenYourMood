@@ -40,7 +40,7 @@ En los archivos [ejercicio9.md](https://github.com/antoniorev/EjerciciosIV/blob/
 
 ### CircleCI
 [CircleCI](https://circleci.com/) es un sistema de integración continua como Travis, pero con ciertas peculiaridades y mejoras, como escoger las especificaciones de procesador y ram sobre las que queremos que se ejecuten nuestros proyectos o mayor concurrencia de los trabajos que queremos ejecutar.
->En el caso de nuestra aplicación, usaremos CircleCI para construir y ejecutar el [contenedor Docker](https://github.com/antoniorev/ListenYourMood/blob/master/Dockerfile) diseñado en la práctica anterior (se puede ver en el archivo [config.yml](https://github.com/antoniorev/ListenYourMood/blob/master/.circleci/config.yml), dentro de la carpeta .circleci). 
+>En el caso de nuestra aplicación, usaremos CircleCI para ejecutar el [contenedor Docker](https://hub.docker.com/repository/docker/antoniorev/listenyourmood) diseñado en la práctica anterior (se puede ver en el archivo [config.yml](https://github.com/antoniorev/ListenYourMood/blob/master/.circleci/config.yml), dentro de la carpeta .circleci). Para ello, podremos utilizar el contenedor ya *buildeado* en DockerHub, así no tener que *rebuildearlo* nosotros. 
 
 Se puede consultar [esta documentación](https://circleci.com/docs/2.0/building-docker-images/) para revisar la sintaxis acerca de cómo construir un contenedor Docker en CircleCI, aunque es bastante intuitiva. Se está utilizando la última versión de CircleCI, la *2.1*, porque es la última y la que incluye más funcionalidades (aunque no se estén usando ahora mismo, podrían ser útiles en el futuro).
 En el archivo [circleCI.md](https://github.com/antoniorev/ListenYourMood/blob/master/docs/circleCI.md) aparece la instalación de CircleCI en un repositorio.
