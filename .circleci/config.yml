@@ -13,10 +13,10 @@ jobs:
       - checkout
       - run:
          name: Install grunt
-         command: sudo npm install -g grunt
+         command: npm install -g grunt
       - run:
          name: Install grunt-run
-         command: sudo npm install -g grunt-run 
+         command: npm install -g grunt-run 
       #Ejecutamos los test
       - run:  
          name: Ejecución de la imagen de la aplicación
