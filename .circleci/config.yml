@@ -10,17 +10,14 @@ jobs:
       
    steps:
       #Checkout realiza una comprobación de los archivos de código
-     - checkout 
-
+      - checkout
       - run:
          name: Install grunt
          command: sudo npm install -g grunt
-         
       - run:
          name: Install grunt-run
-         command: sudo npm install -g grunt-run
-         
+         command: sudo npm install -g grunt-run 
       #Ejecutamos los test
-     - run:  
-        name: Ejecución de la imagen de la aplicación
-        command: grunt test
+      - run:  
+         name: Ejecución de la imagen de la aplicación
+         command: grunt test
