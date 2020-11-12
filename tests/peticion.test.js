@@ -10,7 +10,7 @@ var peticion_test_3 = new Peticion(cancion_test_3);
 
 test('La url es válida', () => {
     expect(peticion_test_1.url.search("https://api.spotify.com/v1/recommendations?")).toBeGreaterThanOrEqual(0);
-    peticion_test_1.url = peticion_test_1.url.slice(peticion_test_1.url.search("\\?")+1);
+    peticion_test_1.url = peticion_test_1.url.slice(peticion_test_1.url.search("\\&")+1);
     listaAtributos = peticion_test_1.url.split("&");
     patron = /[a-z]+(_[a-z]+)?=[0-1](\.[0-9])?/;
     for(var a in listaAtributos)
@@ -18,14 +18,14 @@ test('La url es válida', () => {
     
 
     expect(peticion_test_2.url.search("https://api.spotify.com/v1/recommendations?")).toBeGreaterThanOrEqual(0);
-    peticion_test_2.url = peticion_test_2.url.slice(peticion_test_2.url.search("\\?")+1);
+    peticion_test_2.url = peticion_test_2.url.slice(peticion_test_2.url.search("\\&")+1);
     listaAtributos = peticion_test_2.url.split("&");
     patron = /[a-z]+(_[a-z]+)?=[0-1](\.[0-9])?/;
     for(var a in listaAtributos)
         expect(patron.test(listaAtributos[a])).toBeTruthy();
         
     expect(peticion_test_3.url.search("https://api.spotify.com/v1/recommendations?")).toBeGreaterThanOrEqual(0);
-    peticion_test_3.url = peticion_test_3.url.slice(peticion_test_3.url.search("\\?")+1);
+    peticion_test_3.url = peticion_test_3.url.slice(peticion_test_3.url.search("\\&")+1);
     listaAtributos = peticion_test_3.url.split("&");
     patron = /[a-z]+(_[a-z]+)?=[0-1](\.[0-9])?/;
     for(var a in listaAtributos)
@@ -38,8 +38,17 @@ test('Se espera que devuelva el mismo valor que se le ha definido', () => {
 });
 
 test('Se espera que devuelvan un error los métodos aún no implementados', () => {
-    expect(() => peticion_test_1.crearPeticion()).toThrow( 'not Implemented' );
     expect(() => peticion_test_1.obtenerPlaylistSegunEstadoAnimo()).toThrow( 'not Implemented' );
     expect(() => peticion_test_1.mostrarPlaylist()).toThrow( 'not Implemented' );
     expect(() => peticion_test_1.reproducirPlaylist()).toThrow( 'not Implemented' );
+});
+
+test('Se espera que en la creación de la peticion de error si los parametros no son correctos', async () => {
+    var err;
+    try {
+        await (() => peticion_test_3.crearPeticion());
+      } catch (error) {
+        err = error;
+        expect(error).toBeInstanceOf(TypeError);
+      }
 });
