@@ -15,4 +15,4 @@ jobs:
       #Ejecutamos los test
       - run:  
          name: Ejecución de la imagen de la aplicación
-         command: npm run test
+         command: grunt test
