@@ -11,13 +11,8 @@ jobs:
    steps:
       #Checkout realiza una comprobación de los archivos de código
       - checkout
-      - run:
-         name: Install grunt
-         command: npm install grunt
-      - run:
-         name: Install grunt-run
-         command: npm install grunt-run 
+
       #Ejecutamos los test
       - run:  
          name: Ejecución de la imagen de la aplicación
-         command: grunt test
+         command: npm run test
