@@ -1,7 +1,7 @@
 const Cancion = require('./cancion');
 const Peticion = require('./peticion');
 
-/*
+
 const errorPeticion = {
     error: 400,
     mensaje: "No se ha escrito ningún parámetro"
@@ -15,9 +15,9 @@ const errorBusqueda = {
 const todoBien = {
     error: 200,
     mensaje: "Todo Bien"
-}*/
+}
 module.exports = (req, res) => {
-    /*
+    
     if(req.body){
         var datos = req.body;
         var cancion = new Cancion( datos.acousticness, datos.danceability, datos.energy, datos.instrumentalness, datos.liveness, datos.loudness, datos.mode, datos.popularity, datos.speechiness, datos.valence );
@@ -43,10 +43,4 @@ module.exports = (req, res) => {
         else{
             res.status(400).send(JSON.stringify(errorPeticion));
         }
-     */
-    res.json({
-        body: req.body,
-        query: req.query,
-        cookies: req.cookies,
-      })
   }
