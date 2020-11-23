@@ -11,8 +11,14 @@ const errorBusqueda = {
     error: 404,
     mensaje: "No se ha encontrado ninguna canción, prueba otros parámetros"
 }
+
+const todoBien = {
+    error: 404,
+    mensaje: "Todo Bien"
+}
 module.exports = (req, res) => {
     if(req.body){
+        /*
         var datos = req.body;
         var cancion = new Cancion( datos.acousticness, datos.danceability, datos.energy, datos.instrumentalness, datos.liveness, datos.loudness, datos.mode, datos.popularity, datos.speechiness, datos.valence );
         var peticion = new Peticion(cancion);
@@ -27,13 +33,13 @@ module.exports = (req, res) => {
                 cancionObtenida["album"] = atributo["album"]["name"]
                 arrayCanciones.push(cancionObtenida);
                 
-            }
-            res.status(200).send(JSON.stringify(arrayCanciones));
-
+            }*/
+            res.status(200).send(JSON.stringify(todoBien));
+/*
         }
         else
             res.status(404).send(JSON.stringify(errorBusqueda));
-
+*/
     }
     else{
         res.status(400).send(JSON.stringify(errorPeticion));
