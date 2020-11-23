@@ -1,7 +1,7 @@
 const Cancion = require('./cancion');
 const Peticion = require('./peticion');
 
-
+/*
 const errorPeticion = {
     error: 400,
     mensaje: "No se ha escrito ningún parámetro"
@@ -15,7 +15,7 @@ const errorBusqueda = {
 const todoBien = {
     error: 200,
     mensaje: "Todo Bien"
-}
+}*/
 module.exports = (req, res) => {
     /*
     if(req.body){
