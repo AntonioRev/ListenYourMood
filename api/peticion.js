@@ -89,7 +89,7 @@ class Peticion {
                     if (!error2 && response2.statusCode === 200) {
                   
                       console.log(body2);
-        
+                      return body2;
                   
                     }
                     else{
