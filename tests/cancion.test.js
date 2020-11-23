@@ -1,4 +1,4 @@
-const Cancion = require('../src/cancion');
+const Cancion = require('../api/cancion');
 var cancion_test_2 = new Cancion(null, null, null, null, null, null, null, null, null, null);
 var cancion_test_3 = new Cancion(0.1, 0.2, 0.3, 0.4, 0.5, 0.6);
 var cancion_test_4 = new Cancion(0.1, 0.2, 0.3, 1.4, 2.5, 1.0, 0.7, 0.8, 0.9, 1);
