@@ -20,37 +20,37 @@ module.exports = async (req, res) => {
         
         var cancion = new Cancion( parseFloat(req.query['acousticness']) || null, parseFloat(req.query['danceability']) || null, parseFloat(req.query['energy']) || null, parseFloat(req.query['instrumentalness']) || null, parseFloat(req.query['liveness']) || null, parseFloat(req.query['loudness']) || null, parseFloat(req.query['mode']) || null, parseFloat(req.query['popularity']) || null, parseFloat(req.query['speechiness']) || null, parseFloat(req.query['valence']) || null );
         var peticion = new Peticion(cancion);
-        console.log(peticion.url);
-        var salida;
-        console.log(peticion.crearPeticion(function(err, data){
+        
+        peticion.crearPeticion(function(err, data){
                 if(!err){
-                    salida = data;
+                    cancionesJSON = data;
+
+                    if(parseInt(cancionesJSON['seeds'][0]['afterFilteringSize']) > 0){
+                        var arrayCanciones = [];
+                        for (var atributo in cancionesJSON['tracks']) {
+                            var cancionObtenida = {};
+                            cancionObtenida["nombre"] = (cancionesJSON['tracks'][atributo]['name']);
+                            cancionObtenida["artista"] = (cancionesJSON['tracks'][atributo]['artists'][0]['name']);
+                            cancionObtenida["album"] = (cancionesJSON['tracks'][atributo]['album']['name']);
+                            
+                            arrayCanciones.push(cancionObtenida);
+                            
+                        }
+                        lista = {
+                            canciones: arrayCanciones
+                        }
+                        res.status(200).send(lista);
+                        
+                    }
+                    else
+                    res.status(404).send(JSON.stringify(errorBusqueda));
                 }
                 else{
-                    salida = err;
+                    res.status(400).send(JSON.stringify(err));
                 }
             }
-            ));
-        var cancionesJSON = peticion.crearPeticion();
-        /*
-        if(cancionesJSON['seeds']['afterFilteringSize'] > 0){
-            var arrayCanciones = [];
-            for (var atributo in cancionesJSON['tracks']) {
-                var cancionObtenida = [];
-                cancionObtenida['nombre'] = atributo['name'];
-                cancionObtenida['artista'] = atributo['artists'][0]['name']
-                cancionObtenida['album'] = atributo['album']['name']
-                arrayCanciones.push(cancionObtenida);
-                
-            }
-            res.status(200).send(JSON.stringify(arrayCanciones));
-            
-        }
-        else
-        res.status(404).send(JSON.stringify(errorBusqueda));
-         */
+            );
         
-        res.status(200).send(JSON.stringify(salida));
     }
     else{
         res.status(400).send(JSON.stringify(errorPeticion));
