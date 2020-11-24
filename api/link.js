@@ -16,8 +16,8 @@ const todoBien = {
     mensaje: "Todo Bien"
 }
 module.exports = (req, res) => {
-    if(req.body){
-        var datos = req.body;
+    if(req.query){
+        var datos = req.query;
         var cancion = new Cancion( datos.acousticness, datos.danceability, datos.energy, datos.instrumentalness, datos.liveness, datos.loudness, datos.mode, datos.popularity, datos.speechiness, datos.valence );
         var peticion = new Peticion(cancion);
         var cancionesJSON = peticion.crearPeticion();
@@ -32,7 +32,7 @@ module.exports = (req, res) => {
                 arrayCanciones.push(cancionObtenida);
                 
             }
-            res.status(200).send(JSON.stringify(cancionesJSON));
+            res.status(200).send(JSON.stringify(arrayCanciones));
 
         }
         else
