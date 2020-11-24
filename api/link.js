@@ -17,10 +17,11 @@ const todoBien = {
 }
 module.exports = (req, res) => {
     if(req.query){
+        /*
         var cancion = new Cancion( req.query.acousticness, req.query.danceability, req.query.energy, req.query.instrumentalness, req.query.liveness, req.query.loudness, req.query.mode, req.query.popularity, req.query.speechiness, req.query.valence );
         var peticion = new Peticion(cancion);
         var cancionesJSON = peticion.crearPeticion();
-
+        
         if(cancionesJSON["seeds"]["afterFilteringSize"] > 0){
             var arrayCanciones = [];
             for (var atributo in cancionesJSON["tracks"]) {
@@ -32,10 +33,16 @@ module.exports = (req, res) => {
                 
             }
             res.status(200).send(JSON.stringify(arrayCanciones));
-
+            
         }
         else
-            res.status(404).send(JSON.stringify(errorBusqueda));
+        res.status(404).send(JSON.stringify(errorBusqueda));
+         */
+        res.json({
+            body: req.body,
+            query: req.query,
+            cookies: req.cookies,
+          })
     }
     else{
         res.status(400).send(JSON.stringify(errorPeticion));
