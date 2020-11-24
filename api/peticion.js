@@ -87,7 +87,7 @@ class Peticion {
                   
                   request.get(peticion, function(error2, response2, body2) {
                     if (!error2 && response2.statusCode === 200) {
-                  
+                      console.log(body2);
                       return body2;
                   
                     }

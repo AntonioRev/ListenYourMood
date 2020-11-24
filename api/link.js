@@ -22,9 +22,7 @@ module.exports = async (req, res) => {
         var peticion = new Peticion(cancion);
         console.log(peticion.url);
         console.log(peticion.crearPeticion());
-        var cancionesJSON = {};
-        cancionesJSON = peticion.crearPeticion();
-        console.log(JSON.stringify(cancionesJSON));
+        var cancionesJSON = peticion.crearPeticion();
         /*
         if(cancionesJSON['seeds']['afterFilteringSize'] > 0){
             var arrayCanciones = [];
