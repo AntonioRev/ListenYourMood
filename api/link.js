@@ -1,5 +1,3 @@
-/*
-
 const Cancion = require('./cancion');
 const Peticion = require('./peticion');
 
@@ -39,14 +37,9 @@ module.exports = (req, res) => {
         }
         else
             res.status(404).send(JSON.stringify(errorBusqueda));
-        }
-        else{
-            res.status(400).send(JSON.stringify(errorPeticion));
-        }
-        
     }
-*/
-module.exports = (req, res) => {
-    const { name = 'World' } = req.query
-    res.status(200).send(`Hello ${name}!`)
-  }
+    else{
+        res.status(400).send(JSON.stringify(errorPeticion));
+    }
+        
+}
