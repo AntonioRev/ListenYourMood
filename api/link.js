@@ -20,7 +20,7 @@ module.exports = (req, res) => {
         
         var cancion = new Cancion( parseFloat(req.query['acousticness']) || null, parseFloat(req.query['danceability']) || null, parseFloat(req.query['energy']) || null, parseFloat(req.query['instrumentalness']) || null, parseFloat(req.query['liveness']) || null, parseFloat(req.query['loudness']) || null, parseFloat(req.query['mode']) || null, parseFloat(req.query['popularity']) || null, parseFloat(req.query['speechiness']) || null, parseFloat(req.query['valence']) || null );
         var peticion = new Peticion(cancion);
-        //var cancionesJSON = peticion.crearPeticion();
+        var cancionesJSON = peticion.crearPeticion();
         
         /*
         if(cancionesJSON['seeds']['afterFilteringSize'] > 0){
@@ -40,7 +40,7 @@ module.exports = (req, res) => {
         res.status(404).send(JSON.stringify(errorBusqueda));
          */
         
-        res.status(200).send(peticion.url);
+        res.status(200).send(JSON.stringify(cancionesJSON));
     }
     else{
         res.status(400).send(JSON.stringify(errorPeticion));

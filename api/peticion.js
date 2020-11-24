@@ -44,7 +44,7 @@ class Peticion {
     crearDireccion(cancion){
         //Parte de "[HU01]: Como usuario, quiero que se me recomiende una playlist según mi estado de ánimo"
         //Este método creará una dirección para enviar al servidor de Spotify con las variables creadas en el constructor y devolverá una lista de reproducción
-        var direccion = "https://api.spotify.com/v1/recommendations?seed_genres=country";
+        var direccion = "https://api.spotify.com/v1/recommendations?seed_genres=rock";
         for (var atributo in cancion) {
             if(cancion[atributo] != null){
                     direccion = direccion.concat("&min", atributo, "=",cancion[atributo]);
@@ -88,7 +88,6 @@ class Peticion {
                   request.get(peticion, function(error2, response2, body2) {
                     if (!error2 && response2.statusCode === 200) {
                   
-                      console.log(body2);
                       return body2;
                   
                     }
@@ -142,5 +141,9 @@ class Peticion {
     }
 
 }
+const cancion = new Cancion(0.7, null, 0.7);
+const peticion = new Peticion(cancion);
+console.log(peticion.crearPeticion());
+
 
 module.exports = Peticion;
