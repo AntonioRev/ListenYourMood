@@ -17,8 +17,7 @@ const todoBien = {
 }
 module.exports = (req, res) => {
     if(req.query){
-        var datos = req.query;
-        var cancion = new Cancion( datos.acousticness, datos.danceability, datos.energy, datos.instrumentalness, datos.liveness, datos.loudness, datos.mode, datos.popularity, datos.speechiness, datos.valence );
+        var cancion = new Cancion( req.query.acousticness, req.query.danceability, req.query.energy, req.query.instrumentalness, req.query.liveness, req.query.loudness, req.query.mode, req.query.popularity, req.query.speechiness, req.query.valence );
         var peticion = new Peticion(cancion);
         var cancionesJSON = peticion.crearPeticion();
 
