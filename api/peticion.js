@@ -141,9 +141,6 @@ class Peticion {
     }
 
 }
-const cancion = new Cancion(0.7, null, 0.7);
-const peticion = new Peticion(cancion);
-console.log(peticion.crearPeticion());
 
 
 module.exports = Peticion;
