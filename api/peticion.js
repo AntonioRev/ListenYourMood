@@ -91,21 +91,17 @@ class Peticion {
                       return callback(null, result);
                   
                     }
-                    else{
-                        return callback(error, null);
-                      
+                    else if(!error2){
+                        return callback(response2.statusCode, null);
+                    }else{
+                        return callback(error2, null);
                     }
                   });
             }
-            else{
-                var falloToken = "Error al obtener el token";
-                if(error)
-                    falloToken = falloToken + "\nError:" + error;
-                if(response != null){
-                    falloToken = falloToken + "\nCodigo de error:"+response.statusCode;
-                    falloToken = falloToken + "\nExplicacion:"+response.statusMessage;
-                    }
-            throw new Error(falloToken);
+            else if(!error){
+                return callback(response.statusCode, null);
+            }else{
+                return callback(error, null);
             }
           });
 

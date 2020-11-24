@@ -21,13 +21,13 @@ module.exports = async (req, res) => {
         var cancion = new Cancion( parseFloat(req.query['acousticness']) || null, parseFloat(req.query['danceability']) || null, parseFloat(req.query['energy']) || null, parseFloat(req.query['instrumentalness']) || null, parseFloat(req.query['liveness']) || null, parseFloat(req.query['loudness']) || null, parseFloat(req.query['mode']) || null, parseFloat(req.query['popularity']) || null, parseFloat(req.query['speechiness']) || null, parseFloat(req.query['valence']) || null );
         var peticion = new Peticion(cancion);
         console.log(peticion.url);
+        var salida;
         console.log(peticion.crearPeticion(function(err, data){
                 if(!err){
-
-                        res.send(data);
+                    salida = data;
                 }
                 else{
-                    res.send(err);
+                    salida = err;
                 }
             }
             ));
@@ -50,7 +50,7 @@ module.exports = async (req, res) => {
         res.status(404).send(JSON.stringify(errorBusqueda));
          */
         
-        res.status(200).send(JSON.stringify(cancionesJSON));
+        res.status(200).send(JSON.stringify(salida));
     }
     else{
         res.status(400).send(JSON.stringify(errorPeticion));
