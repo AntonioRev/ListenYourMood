@@ -17,8 +17,8 @@ const todoBien = {
 }
 module.exports = (req, res) => {
     if(req.query){
-        /*
-        var cancion = new Cancion( req.query.acousticness, req.query.danceability, req.query.energy, req.query.instrumentalness, req.query.liveness, req.query.loudness, req.query.mode, req.query.popularity, req.query.speechiness, req.query.valence );
+        
+        var cancion = new Cancion( req.query['acousticness'], req.query['danceability'], req.query['energy'], req.query['instrumentalness'], req.query['liveness'], req.query['loudness'], req.query['mode'], req.query['popularity'], req.query['speechiness'], req.query['valence'] );
         var peticion = new Peticion(cancion);
         var cancionesJSON = peticion.crearPeticion();
         
@@ -37,7 +37,7 @@ module.exports = (req, res) => {
         }
         else
         res.status(404).send(JSON.stringify(errorBusqueda));
-         */
+         
         res.json({
             body: req.body,
             query: req.query,
