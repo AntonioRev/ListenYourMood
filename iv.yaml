@@ -1,4 +1,4 @@
-entidad: src/cancion.js
+entidad: api/cancion.js
 lenguaje: javascript
 test: tests/cancion.test.js
 taskfile: package.json
