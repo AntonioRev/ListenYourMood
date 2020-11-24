@@ -1,6 +1,6 @@
 FROM node:14.15.0-alpine3.10
 
-LABEL version="1.3.2" maintainer="antoniorp1998@gmail.com"
+LABEL version="1.4.2" maintainer="antoniorp1998@gmail.com"
 
 # Creación de usuario y creación de carpeta node_modules (cambiando los respectivos permisos) para poder instalar las dependencias
 RUN npm i -g jest && \

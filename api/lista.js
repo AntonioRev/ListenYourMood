@@ -32,6 +32,15 @@ module.exports = async (req, res) => {
                             arrayCanciones.push(cancionObtenida);
                             
                         }
+                        arrayCanciones.sort(function(a, b) {
+                            var keyA = a["nombre"],
+                              keyB = b["nombre"];
+                            // Compare the 2 dates
+                            if (keyA < keyB) return -1;
+                            if (keyA > keyB) return 1;
+                            return 0;
+                          });
+                          
                         lista = {
                             canciones: arrayCanciones
                         }
