@@ -11,10 +11,6 @@ const errorBusqueda = {
     mensaje: "No se ha encontrado ninguna canción, prueba otros parámetros"
 }
 
-const todoBien = {
-    error: 200,
-    mensaje: "Todo Bien"
-}
 module.exports = async (req, res) => {
     if(req.query){
         
