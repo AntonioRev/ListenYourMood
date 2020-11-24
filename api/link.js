@@ -32,7 +32,7 @@ module.exports = (req, res) => {
                 arrayCanciones.push(cancionObtenida);
                 
             }
-            res.status(200).send(JSON.stringify(todoBien));
+            res.status(200).send(JSON.stringify(cancionesJSON));
 
         }
         else
