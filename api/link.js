@@ -15,7 +15,7 @@ const todoBien = {
     error: 200,
     mensaje: "Todo Bien"
 }
-module.exports = (req, res) => {
+module.exports = async (req, res) => {
     if(req.query){
         
         var cancion = new Cancion( parseFloat(req.query['acousticness']) || null, parseFloat(req.query['danceability']) || null, parseFloat(req.query['energy']) || null, parseFloat(req.query['instrumentalness']) || null, parseFloat(req.query['liveness']) || null, parseFloat(req.query['loudness']) || null, parseFloat(req.query['mode']) || null, parseFloat(req.query['popularity']) || null, parseFloat(req.query['speechiness']) || null, parseFloat(req.query['valence']) || null );
