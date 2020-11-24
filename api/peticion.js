@@ -55,7 +55,7 @@ class Peticion {
         return direccion;
     }
 
-    crearPeticion(){
+    crearPeticion(callback){
         //Parte de "[HU01]: Como usuario, quiero que se me recomiende una playlist según mi estado de ánimo"
         //POR IMPLEMENTAR:
         //Este método creará una peticion para enviar al servidor de Spotify con las variables creadas en el constructor y devolverá una lista de reproducción
@@ -87,19 +87,12 @@ class Peticion {
                   
                   request.get(peticion, function(error2, response2, body2) {
                     if (!error2 && response2.statusCode === 200) {
-                      console.log(body2);
-                      return body2;
+                      var result = JSON.stringify(JSON.parse(body2));
+                      return callback(null, result);
                   
                     }
                     else{
-                        var falloPlaylist = "Error al obtener la playlist";
-                        if(error2)
-                            falloPlaylist = falloPlaylist + "\nError:" + error2;
-                        if(response2 != null){
-                            falloPlaylist = falloPlaylist + "\nCodigo de error:"+response2.statusCode;
-                            falloPlaylist = falloPlaylist + "\nExplicacion:"+response2.statusMessage;
-                        }
-                    throw new Error(falloPlaylist);
+                        return callback(error, null);
                       
                     }
                   });

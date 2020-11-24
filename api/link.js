@@ -21,7 +21,16 @@ module.exports = async (req, res) => {
         var cancion = new Cancion( parseFloat(req.query['acousticness']) || null, parseFloat(req.query['danceability']) || null, parseFloat(req.query['energy']) || null, parseFloat(req.query['instrumentalness']) || null, parseFloat(req.query['liveness']) || null, parseFloat(req.query['loudness']) || null, parseFloat(req.query['mode']) || null, parseFloat(req.query['popularity']) || null, parseFloat(req.query['speechiness']) || null, parseFloat(req.query['valence']) || null );
         var peticion = new Peticion(cancion);
         console.log(peticion.url);
-        console.log(peticion.crearPeticion());
+        console.log(peticion.crearPeticion(function(err, data){
+                if(!err){
+
+                        res.send(data);
+                }
+                else{
+                    res.send(err);
+                }
+            }
+            ));
         var cancionesJSON = peticion.crearPeticion();
         /*
         if(cancionesJSON['seeds']['afterFilteringSize'] > 0){
