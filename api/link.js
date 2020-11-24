@@ -18,18 +18,18 @@ const todoBien = {
 module.exports = (req, res) => {
     if(req.query){
         
-        var cancion = new Cancion( parseInt(req.query['acousticness']) || null, parseInt(req.query['danceability']) || null, parseInt(req.query['energy']) || null, parseInt(req.query['instrumentalness']) || null, parseInt(req.query['liveness']) || null, parseInt(req.query['loudness']) || null, parseInt(req.query['mode']) || null, parseInt(req.query['popularity']) || null, parseInt(req.query['speechiness']) || null, parseInt(req.query['valence']) || null );
+        var cancion = new Cancion( parseFloat(req.query['acousticness']) || null, parseFloat(req.query['danceability']) || null, parseFloat(req.query['energy']) || null, parseFloat(req.query['instrumentalness']) || null, parseFloat(req.query['liveness']) || null, parseFloat(req.query['loudness']) || null, parseFloat(req.query['mode']) || null, parseFloat(req.query['popularity']) || null, parseFloat(req.query['speechiness']) || null, parseFloat(req.query['valence']) || null );
         var peticion = new Peticion(cancion);
-        /*
         var cancionesJSON = peticion.crearPeticion();
         
-        if(cancionesJSON["seeds"]["afterFilteringSize"] > 0){
+        /*
+        if(cancionesJSON['seeds']['afterFilteringSize'] > 0){
             var arrayCanciones = [];
-            for (var atributo in cancionesJSON["tracks"]) {
+            for (var atributo in cancionesJSON['tracks']) {
                 var cancionObtenida = [];
-                cancionObtenida["nombre"] = atributo["name"];
-                cancionObtenida["artista"] = atributo["artists"][0]["name"]
-                cancionObtenida["album"] = atributo["album"]["name"]
+                cancionObtenida['nombre'] = atributo['name'];
+                cancionObtenida['artista'] = atributo['artists'][0]['name']
+                cancionObtenida['album'] = atributo['album']['name']
                 arrayCanciones.push(cancionObtenida);
                 
             }
@@ -39,10 +39,8 @@ module.exports = (req, res) => {
         else
         res.status(404).send(JSON.stringify(errorBusqueda));
          */
-        var salida = []
-        for(var atributo in cancion)
-            salida.push(atributo + ": " + cancion[atributo] + "\n")
-        res.status(200).send(salida);
+        
+        res.status(200).send(cancionesJSON);
     }
     else{
         res.status(400).send(JSON.stringify(errorPeticion));
