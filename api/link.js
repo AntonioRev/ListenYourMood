@@ -18,8 +18,9 @@ const todoBien = {
 module.exports = (req, res) => {
     if(req.query){
         
-        var cancion = new Cancion( req.query['acousticness'], req.query['danceability'], req.query['energy'], req.query['instrumentalness'], req.query['liveness'], req.query['loudness'], req.query['mode'], req.query['popularity'], req.query['speechiness'], req.query['valence'] );
+        var cancion = new Cancion( parseInt(req.query['acousticness']) || null, parseInt(req.query['danceability']) || null, parseInt(req.query['energy']) || null, parseInt(req.query['instrumentalness']) || null, parseInt(req.query['liveness']) || null, parseInt(req.query['loudness']) || null, parseInt(req.query['mode']) || null, parseInt(req.query['popularity']) || null, parseInt(req.query['speechiness']) || null, parseInt(req.query['valence']) || null );
         var peticion = new Peticion(cancion);
+        /*
         var cancionesJSON = peticion.crearPeticion();
         
         if(cancionesJSON["seeds"]["afterFilteringSize"] > 0){
@@ -37,12 +38,8 @@ module.exports = (req, res) => {
         }
         else
         res.status(404).send(JSON.stringify(errorBusqueda));
-         
-        res.json({
-            body: req.body,
-            query: req.query,
-            cookies: req.cookies,
-          })
+         */
+        res.status(200).send(cancion.toString());
     }
     else{
         res.status(400).send(JSON.stringify(errorPeticion));
