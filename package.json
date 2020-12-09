@@ -17,7 +17,7 @@
         "jest": "^26.6.1"
     },
     "dependencies": {
-        "nestjs": "0.0.1",
+        "express": "^4.17.1",
         "request": "^2.88.2"
     }
 }
