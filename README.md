@@ -7,20 +7,24 @@
 Por ello, he decidido implementar una API, la cual dependiendo del género y de mi estado de ánimo me recomiende una lista de reproducción en Spotify.
 A su vez, y por comodidad, se añadirá una opción para poder reproducir la lista de reproducción en la misma aplicación, sin necesidad de salir de la misma o tener que ir a otra página o aplicación
 
-Para el desarrollo de este proyecto será necesario utilizar en algún momento un repositorio en el que se encuentra una [API de autenticación de Spotify](https://github.com/spotify/web-api-auth-examples). A partir de ahí se podrá ejecutar la aplicación pues se necesita un *token* para realizar peticiones al servidor de Spotify.
+Para el desarrollo de este proyecto es necesario utilizar un usuario de Spotify por defecto, para poder generar un *token* para realizar peticiones al servidor de Spotify.
 
+## Microservicios y Routing
+En el fichero [api/lista.js](https://github.com/antoniorev/ListenYourMood/blob/master/api/lista.js) se han implementado una serie de funciones que se ejecutan con las diferentes peticiones al servidor según la ruta indicada.
 
-## Herramientas y funciones Serverless
+El framework escogido para gestionar los Microservicios ha sido *Express*, frente a otras opciones como *Nest* o *Hapi*. Dentro de la carpeta *[docs](https://github.com/AntonioRev/ListenYourMood/tree/master/docs)* se encuentra el archivo [frameworkParaMicroservicios.md](https://github.com/AntonioRev/ListenYourMood/blob/master/docs/frameworkParaMicroservicios.md), donde se explica el motivo de la elección de Express frente a las otras opciones.
 
-Se ha desarrollado una [función Serverless](https://github.com/antoniorev/ListenYourMood/blob/master/api/lista.js) que nos mostrará una lista de canciones según una serie de parámetros musicales que introduzcamos. Esta función está desplegada en un servidor de [Vercel](https://vercel.com/) de forma gratuita.
+La explicación sobre cómo se usa *Express* dentro de la API se encuentra en el archivo [express.md](https://github.com/AntonioRev/ListenYourMood/blob/master/docs/express.md), dentro de la carpeta *[docs](https://github.com/AntonioRev/ListenYourMood/tree/master/docs)*.
 
-El [link de despliegue](https://listen-your-mood.vercel.app/api/lista?acousticness=0.7&energy=0.7) se encuentra en el fichero [iv.yaml](https://github.com/antoniorev/ListenYourMood/blob/master/iv.yaml).
+Las posibles peticiones a realizar al servidor se encuentran explicadas en el archivo [peticionesAPI.md](https://github.com/AntonioRev/ListenYourMood/blob/master/docs/peticionesAPI.md), dentro de la carpeta *[docs](https://github.com/AntonioRev/ListenYourMood/tree/master/docs)*.
 
-En la carpeta *docs* se puede encontrar más información acerca de la [configuración de Vercel](https://github.com/antoniorev/ListenYourMood/blob/master/docs/configuracionVercel.md) y de la [explicación de la función Serverless](https://github.com/antoniorev/ListenYourMood/blob/master/docs/funcionServerless.md).
+## Documentación añadida
+Todos los ficheros de documentación se encuentran en la carpeta *[docs](https://github.com/AntonioRev/ListenYourMood/tree/master/docs)*.
+### Herramientas y funciones Serverless
+En la carpeta *docs* se puede encontrar más información acerca de la [configuración de Vercel](https://github.com/antoniorev/ListenYourMood/blob/master/docs/configuracionVercel.md) y de la [explicación de la función Serverless](https://github.com/antoniorev/ListenYourMood/blob/master/docs/funcionServerless.md) (esta función ha sido sustituida por las diferentes funciones para los microservicios, por tanto el link está obsoleto).
 
 
 ### Pasos realizados (Issues / Milestones)
-
 Dentro de la carpeta *[docs](https://github.com/AntonioRev/ListenYourMood/tree/master/docs)* se encuentra el archivo [pasos.md](https://github.com/AntonioRev/ListenYourMood/blob/master/docs/pasos.md), que irá reflejando los pasos que se den en los diferentes estados de la aplicación. Estos pasos deberán relacionarse con los diferentes [issues](https://github.com/AntonioRev/ListenYourMood/issues), [historias de usuario](https://github.com/AntonioRev/ListenYourMood/labels/user-stories) y [milestones](https://github.com/AntonioRev/ListenYourMood/milestones) propuestos en el proyecto.
 
 ### Herramientas necesarias
