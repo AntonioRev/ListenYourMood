@@ -50,6 +50,9 @@ var generarToken = function (req, res, next) {
 app.use(generarToken);
 
 
+
+
+
 /**
  * PLAYLIST POR GENERO:
  * Te devuelve una playlist de canciones según el género introducido,
@@ -57,7 +60,6 @@ app.use(generarToken);
  */
 app.get('/genero/:g', function(req, res) {
     if(req.query){
-        
         var cancion = new Cancion( parseFloat(req.query['acousticness']) || null, parseFloat(req.query['danceability']) || null, parseFloat(req.query['energy']) || null, parseFloat(req.query['instrumentalness']) || null, parseFloat(req.query['liveness']) || null, parseFloat(req.query['loudness']) || null, parseFloat(req.query['mode']) || null, parseFloat(req.query['popularity']) || null, parseFloat(req.query['speechiness']) || null, parseFloat(req.query['valence']) || null, req.params.g || "rock", false );
         
         var peticion = new Peticion(cancion);
@@ -90,6 +92,7 @@ app.get('/genero/:g', function(req, res) {
                         lista = {
                             canciones: arrayCanciones
                         }
+                        
                         res.status(200).send(lista);
                         
                     }
@@ -117,6 +120,10 @@ app.get('/genero/:g', function(req, res) {
         }
     });
     
+
+
+
+
 /**
  * OBTENER GENEROS:
  * Te devuelve los géneros disponibles, sobre los
@@ -153,6 +160,11 @@ app.get('/generos', function(req, res) {
 
 
     });
+
+
+
+
+
 
 /**
  * TOP CANCIONES DE UN ARTISTA:
@@ -259,6 +271,12 @@ app.get('/artista/:nombreArtista/top', function(req, res) {
     }
 });
 
+
+
+
+
+
+
 /**
  * PLAYLIST POR ARTISTA:
  * Te devuelve una playlist de canciones en relación al artista 
@@ -359,6 +377,12 @@ app.get('/artista/:nombreArtista', function(req, res) {
     }
     });
 
-    app.listen(port, () => {
+
+
+
+
+var server = app.listen(port, () => {
     console.log(`API escuchando en: http://localhost:${port}`)
-  })
+})
+
+  module.exports = server;

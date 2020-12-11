@@ -5,6 +5,7 @@ En este archivo, nos encargamos de manejar las peticiones que llegan, y dependie
 
 En el fichero se importa tanto Express como el paquete módulo *Request*, pues con Express manejaremos las peticiones a nuestro servidor, y con Request lanzaremos peticiones al servidor de Spotify para obtener los datos que pida el usuario.
 
+### Funciones
 Las únicas tres funciones de Express que se utilizan son **use**, **get** y **listen**.
 
 - **Use** es utilizada para la función **Middleware**. En este caso, nuestra función Middleware es *generarToken*, una función que se encarga de generar un token (para Spotify) con cada petición que se realice, pues para realizar CUALQUIER petición a Spotify necesitamos un token de autenticación. Se podría designar un Middleware distinto para cada función añadiéndolo como parámetro en una llamada a la función *get*, pero para nuestro caso queremos que se ejecute siempre que se haga una petición a nuestra API.
@@ -20,3 +21,6 @@ Las únicas tres funciones de Express que se utilizan son **use**, **get** y **l
     > `API escuchando en: http://localhost:3000`
 
 Las funciones devuelven un JSON (convertido en string) que contienen o los datos solicitados o un mensaje de error con la causa.
+
+### Tests
+Para realizar los tests, vamos a usar el framework *Jest*, que es el que venimos usando para los tests de las otras clases, y el framework *Supertest*, que es una librería para testear servidores HTTP basados en Nodejs.

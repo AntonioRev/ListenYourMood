@@ -1,9 +1,9 @@
 const Cancion = require('../api/cancion');
-var cancion_test_2 = new Cancion(null, null, null, null, null, null, null, null, null, null);
+var cancion_test_2 = new Cancion(null, null, null, null, null, null, null, null, null, null, null, null);
 var cancion_test_3 = new Cancion(0.1, 0.2, 0.3, 0.4, 0.5, 0.6);
 var cancion_test_4 = new Cancion(0.1, 0.2, 0.3, 1.4, 2.5, 1.0, 0.7, 0.8, 0.9, 1);
 var cancion_test_5 = new Cancion(-0.1, -0.2, -0.3, -0.4, -0.5, 0.0, 0.7, 0.8, 0.9, 1);
-var cancion_test_6 = new Cancion(null, null, null, null, null, 0.4, null, null, null, null);
+var cancion_test_6 = new Cancion(null, null, null, null, null, 0.4, null, null, null, null, null, null);
 
 test('Admite null en las variables', () => {
   for (var atributo in cancion_test_2) {
@@ -23,6 +23,7 @@ test('Los valores pueden no estar definidos', () => {
     expect(cancion_test_3.speechiness).toBeUndefined();
   
     expect(cancion_test_3.valence).toBeUndefined();
+
   });
 
 test('No deben ser mayores que 1', () => {
@@ -74,8 +75,19 @@ test('Deben devolver el mismo valor que se ha definido', () => {
   cancion_test_2.popularity       = 0.75;
   cancion_test_2.speechiness      = 0.75;
   cancion_test_2.valence          = 0.75;
+  cancion_test_2.genre            = "rock";
+  cancion_test_2.artista          = false;
+
 
   for (var atributo in cancion_test_2) {
+
+    if(atributo == "seed_genres")
+      expect(cancion_test_2[atributo]).toBe("rock");
+
+    else if(atributo == "es_artista")
+      expect(cancion_test_2[atributo]).toBeFalsy();
+      
+    else
     expect(cancion_test_2[atributo]).toBe(0.75);
   }
 });
