@@ -292,7 +292,6 @@ app.get('/artista/:nombreArtista', function(req, res) {
                 peticion.crearPeticion(function(err, data){
                     if(!err){
                             cancionesJSON = data;
-                            console.log(cancionesJSON);
                             if(parseInt(cancionesJSON['seeds'][1]['afterFilteringSize']) > 0){
                                 var arrayCanciones = [];
                                 for (var atributo in cancionesJSON['tracks']) {
