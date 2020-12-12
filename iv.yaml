@@ -5,10 +5,8 @@ entidad:
 lenguaje: javascript
 test: 
   - tests/cancion.test.js
-  - test/peticion.test.js
-  - test/lista.test.js
+  - tests/peticion.test.js
+  - tests/lista.test.js
 taskfile: package.json
 URL: https://listen-your-mood.vercel.app/api/vercel?acousticness=0.7
-make:
-  - npm install
-  - grunt test
+make: npm 
