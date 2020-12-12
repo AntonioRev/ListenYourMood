@@ -15,7 +15,7 @@ const errorServer = {
     mensaje: "Error del servidor"
 }
 
-var accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), { flags: 'a' })
+//var accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), { flags: 'a' })
 
 var app = express();
 const port = process.env.PORT || 3000
@@ -54,7 +54,7 @@ var generarToken = function (req, res, next) {
 app.use(generarToken);
 
 
-app.use(morgan(' [:date[web]] -> ":method :url HTTP/:http-version" :status  - :response-time ms', { stream: accessLogStream }))
+app.use(morgan(' [:date[web]] -> ":method :url HTTP/:http-version" :status  - :response-time ms'))
 
 
 

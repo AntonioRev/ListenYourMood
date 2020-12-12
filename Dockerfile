@@ -25,10 +25,7 @@ USER root
 RUN rm package*.json
 
 # Cambio de usuario y ejecución de los tests
-WORKDIR /test
-USER root
-
-RUN chmod 777 /test
-
 USER node
+WORKDIR /test
+
 CMD ["grunt", "test"]
