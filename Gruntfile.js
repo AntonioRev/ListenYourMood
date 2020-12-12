@@ -1,7 +1,6 @@
 module.exports = function(grunt) {
     
     grunt.loadNpmTasks('grunt-run');
-    // Project configuration.
     grunt.initConfig({
         run: {
             install: {
@@ -19,15 +18,22 @@ module.exports = function(grunt) {
                   '--coverage',
                   '--coverageDirectory=\'docs/coverage\''
               ]
+            },
+            start: {
+              cmd: 'node',
+              args: [
+                'api/lista.js'
+              ]
             }
 
 
           }
     });
   
-  grunt.registerTask('default', [ 'run:install' ]);  
-  grunt.registerTask('install', [ 'run:install' ]);  
-  grunt.registerTask('test', [ 'run:test' ]);
-  grunt.registerTask('coverage', [ 'run:coverage' ]);
+  grunt.registerTask('default',   [ 'run:install' ]);  
+  grunt.registerTask('install',   [ 'run:install' ]);  
+  grunt.registerTask('test',      [ 'run:test' ]);
+  grunt.registerTask('coverage',  [ 'run:coverage' ]);
+  grunt.registerTask('start',     [ 'run:start' ])
 
 };

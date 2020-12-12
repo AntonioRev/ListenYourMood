@@ -1,5 +1,12 @@
-entidad: api/cancion.js
+entidad: 
+  - api/cancion.js
+  - api/peticion.js
+  - api/lista.js
 lenguaje: javascript
-test: tests/cancion.test.js
+test: 
+  - tests/cancion.test.js
+  - test/peticion.test.js
+  - test/lista.test.js
 taskfile: package.json
 URL: https://listen-your-mood.vercel.app/api/lista?acousticness=0.7&energy=0.7
+make: npm
