@@ -22,7 +22,7 @@ COPY --chown=node Gruntfile.js ./
 RUN npm i
 
 USER root
-RUN rm package*.json
+RUN rm package*.json && mkdir api && touch api/access.log && chown node:node api/access.log
 
 # Cambio de usuario y ejecución de los tests
 USER node
