@@ -1,5 +1,8 @@
 var express = require('express');
 var request = require('request');
+var morgan = require('morgan');
+var fs = require('fs');
+var path = require('path');
 const Cancion = require('./cancion');
 const Peticion = require('./peticion');
 
@@ -12,13 +15,14 @@ const errorServer = {
     mensaje: "Error del servidor"
 }
 
+var accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), { flags: 'a' })
 
 var app = express();
 const port = process.env.PORT || 3000
 
 /** FUNCION MIDDLEWARE: 
  *  Generar un token necesario para hacer peticiones a spotify
-*/ 
+ */ 
 var generarToken = function (req, res, next) {
     var OpcionesAutorizacion = {
         url: 'https://accounts.spotify.com/api/token',
@@ -26,14 +30,14 @@ var generarToken = function (req, res, next) {
             'Authorization': 'Basic ' + (new Buffer(id_cliente + ':' + num_secreto).toString('base64'))
         },
         form: {
-          grant_type: 'client_credentials'
+            grant_type: 'client_credentials'
         },
         json: true
-      };
-      
-      request.post(OpcionesAutorizacion, function(error, response, body) {
+    };
+    
+    request.post(OpcionesAutorizacion, function(error, response, body) {
         if (!error && response.statusCode === 200) {
-      
+            
             tokenPeticion = body.access_token;
             next();
             
@@ -43,13 +47,14 @@ var generarToken = function (req, res, next) {
                 mensaje: "ERROR DEL SERVIDOR: No se ha podido generar el token"
             }));
         }
-      });
-  };
+    });
+};
 
 
 app.use(generarToken);
 
 
+app.use(morgan(' [:date[web]] -> ":method :url HTTP/:http-version" :status  - :response-time ms', { stream: accessLogStream }))
 
 
 

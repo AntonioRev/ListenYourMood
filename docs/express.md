@@ -24,3 +24,9 @@ Las funciones devuelven un JSON (convertido en string) que contienen o los datos
 
 ### Tests
 Para realizar los tests, vamos a usar el framework *Jest*, que es el que venimos usando para los tests de las otras clases, y el framework *Supertest*, que es una librería para testear servidores HTTP basados en Nodejs.
+
+### Logs
+Como *Logger* se ha escogido **[Morgan](https://github.com/expressjs/morgan)** por su sencillez y fácil incorporación al proyecto. Este *logger* almacena en un archivo llamado *access.log*, con una estructura de:
+> Fecha                           -> "Método URL          HTTP/Version" Estado TiempoDeRespuesta
+
+> [Sat, 12 Dec 2020 01:14:17 GMT] -> "GET    /genero/rock HTTP/1.1"     200  - 372.289 ms
