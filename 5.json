@@ -1,1 +1,1 @@
-{"canciones":[{"nombre":"Crazy Little Thing Called Love - Remastered 2011","artista":"Queen","album":"The Game (2011 Remaster)"},{"nombre":"Johnny B. Goode","artista":"Chuck Berry","album":"Berry Is On Top"},{"nombre":"Like a Rolling Stone","artista":"Bob Dylan","album":"Highway 61 Revisited"},{"nombre":"Whatever You Want","artista":"Status Quo","album":"Whatever You Want"}]}
+{"url":"https://api.spotify.com/v1/recommendations?seed_genres=rock&target_acousticness=0.7&seed_genres=rock&es_artista=false"}
