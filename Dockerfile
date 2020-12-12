@@ -5,6 +5,9 @@ LABEL version="1.4.2" maintainer="antoniorp1998@gmail.com"
 # Creación de usuario y creación de carpeta node_modules (cambiando los respectivos permisos) para poder instalar las dependencias
 RUN npm i -g jest && \
 npm i -g supertest && \
+npm i -g morgan && \
+npm i -g request && \
+npm i -g express && \
 npm i -g grunt-cli && \
 adduser -D usutest && \
 mkdir /node_modules && \
