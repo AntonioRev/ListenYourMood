@@ -9,4 +9,4 @@ test:
   - tests/lista.test.js
 taskfile: package.json
 URL: https://listen-your-mood.vercel.app/api/vercel?acousticness=0.7
-make: npm 
+make: grunt

@@ -24,8 +24,7 @@ RUN npm i
 USER root
 RUN rm package*.json
 
-# Cambio de usuario y ejecución de los tests
-USER node
+# Ejecución de los tests
 WORKDIR /test
 
 CMD ["grunt", "test"]

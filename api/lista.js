@@ -54,7 +54,7 @@ var generarToken = function (req, res, next) {
 app.use(generarToken);
 
 
-app.use(morgan(' [:date[web]] -> ":method :url HTTP/:http-version" :status  - :response-time ms'))
+app.use(morgan(' [:date[web]] -> ":method :url HTTP/:http-version" :status  - :response-time ms', { stream: accessLogStream }))
 
 
 
