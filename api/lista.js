@@ -15,7 +15,7 @@ const errorServer = {
     mensaje: "Error del servidor"
 }
 
-//var accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), { flags: 'a' })
+var accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), { flags: 'a' })
 
 var app = express();
 const port = process.env.PORT || 3000
