@@ -19,6 +19,8 @@ En el fichero [api/lista.js](https://github.com/antoniorev/ListenYourMood/blob/m
 
 El fichero [api/servidor.js](https://github.com/antoniorev/ListenYourMood/blob/master/api/servidor.js) es el fichero que se ejecuta en Node para levantar el servidor. Así se desacopla las funciones del servidor con el servidor en sí.
 
+Para la configuración distribuida, se ha utilizado *etcd3* y la biblioteca de node *node-etcd*. Dentro del código del fichero [servidor.js](https://github.com/antoniorev/ListenYourMood/blob/master/api/servidor.js) se crea una instancia de etcd para obtener el puerto de la variable de entorno *port*. Si está vacía, se asigna por defecto el puerto 3000.
+
 El framework escogido para gestionar los Microservicios ha sido *Express*, frente a otras opciones como *Nest* o *Hapi*. Dentro de la carpeta *[docs](https://github.com/AntonioRev/ListenYourMood/tree/master/docs)* se encuentra el archivo [frameworkParaMicroservicios.md](https://github.com/AntonioRev/ListenYourMood/blob/master/docs/frameworkParaMicroservicios.md), donde se explica el motivo de la elección de Express frente a las otras opciones.
 
 La explicación sobre cómo se usa *Express* dentro de la API se encuentra en el archivo [express.md](https://github.com/AntonioRev/ListenYourMood/blob/master/docs/express.md), dentro de la carpeta *[docs](https://github.com/AntonioRev/ListenYourMood/tree/master/docs)*.

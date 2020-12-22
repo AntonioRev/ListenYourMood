@@ -1,7 +1,10 @@
 const app = require('./lista.js');
+var Etcd = require('node-etcd');
 
-
-const port = process.env.PORT || 3000
+let etcd = new Etcd("127.0.0.1:22379");
+var puertoetcd;
+etcd.get("port", puertoetcd);
+const port = puertoetcd || 3000;
 
 
 app.listen(port, () => {
