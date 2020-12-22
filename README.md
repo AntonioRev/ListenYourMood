@@ -11,13 +11,19 @@ A su vez, y por comodidad, se añadirá una opción para poder reproducir la lis
 Para el desarrollo de este proyecto es necesario utilizar un usuario de Spotify por defecto, para poder generar un *token* para realizar peticiones al servidor de Spotify.
 
 ## Microservicios y Routing
-En el fichero [api/lista.js](https://github.com/antoniorev/ListenYourMood/blob/master/api/lista.js) se han implementado una serie de funciones que se ejecutan con las diferentes peticiones al servidor según la ruta indicada.
+En el fichero [api/lista.js](https://github.com/antoniorev/ListenYourMood/blob/master/api/lista.js) se han implementado una serie de funciones que se ejecutan con las diferentes peticiones al servidor según la ruta indicada. Como avance del proyecto se han implementado:
+  - Una petición para obtener todos los géneros disponibles en Spotify.
+  - Una petición que se encargue de, a partir del género introducido, obtener su ID de la API de Spotify y volver a hacer una petición al servidor de Spotify para generar una playlist en relación a dicho ID.
+  - Una petición igual que la anterior pero para obtener una playlist en relación a un artista.
+  - Una petición igual que la anterior pero para obtener el top canciones del artista introducido.
 
 El framework escogido para gestionar los Microservicios ha sido *Express*, frente a otras opciones como *Nest* o *Hapi*. Dentro de la carpeta *[docs](https://github.com/AntonioRev/ListenYourMood/tree/master/docs)* se encuentra el archivo [frameworkParaMicroservicios.md](https://github.com/AntonioRev/ListenYourMood/blob/master/docs/frameworkParaMicroservicios.md), donde se explica el motivo de la elección de Express frente a las otras opciones.
 
 La explicación sobre cómo se usa *Express* dentro de la API se encuentra en el archivo [express.md](https://github.com/AntonioRev/ListenYourMood/blob/master/docs/express.md), dentro de la carpeta *[docs](https://github.com/AntonioRev/ListenYourMood/tree/master/docs)*.
 
 Las posibles peticiones a realizar al servidor se encuentran explicadas en el archivo [peticionesAPI.md](https://github.com/AntonioRev/ListenYourMood/blob/master/docs/peticionesAPI.md), dentro de la carpeta *[docs](https://github.com/AntonioRev/ListenYourMood/tree/master/docs)*.
+
+Los tests para dichas peticiones se encuentran en el fichero [lista.test.js](https://github.com/antoniorev/ListenYourMood/blob/master/tests/lista.test.js). Utilizan *Jest* y *Supertest* para realizar dichos tests, evaluando lo que devuelve cada petición variando los parámetros introducidos. Dentro de la carpeta *[docs](https://github.com/AntonioRev/ListenYourMood/tree/master/docs)* se encuentra el archivo [tests.md](https://github.com/AntonioRev/ListenYourMood/blob/master/docs/testsPeticion.md), donde se explica lo realizado en cada uno de los tests.
 
 ## Documentación añadida
 Todos los ficheros de documentación se encuentran en la carpeta *[docs](https://github.com/AntonioRev/ListenYourMood/tree/master/docs)*.
