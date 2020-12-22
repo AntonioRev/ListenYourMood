@@ -25,7 +25,7 @@ module.exports = function(grunt) {
             start: {
               cmd: 'node',
               args: [
-                'api/lista.js'
+                'api/servidor.js'
               ]
             }
 

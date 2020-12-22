@@ -17,6 +17,8 @@ En el fichero [api/lista.js](https://github.com/antoniorev/ListenYourMood/blob/m
   - Una petición igual que la anterior pero para obtener una playlist en relación a un artista.
   - Una petición igual que la anterior pero para obtener el top canciones del artista introducido.
 
+El fichero [api/servidor.js](https://github.com/antoniorev/ListenYourMood/blob/master/api/servidor.js) es el fichero que se ejecuta en Node para levantar el servidor. Así se desacopla las funciones del servidor con el servidor en sí.
+
 El framework escogido para gestionar los Microservicios ha sido *Express*, frente a otras opciones como *Nest* o *Hapi*. Dentro de la carpeta *[docs](https://github.com/AntonioRev/ListenYourMood/tree/master/docs)* se encuentra el archivo [frameworkParaMicroservicios.md](https://github.com/AntonioRev/ListenYourMood/blob/master/docs/frameworkParaMicroservicios.md), donde se explica el motivo de la elección de Express frente a las otras opciones.
 
 La explicación sobre cómo se usa *Express* dentro de la API se encuentra en el archivo [express.md](https://github.com/AntonioRev/ListenYourMood/blob/master/docs/express.md), dentro de la carpeta *[docs](https://github.com/AntonioRev/ListenYourMood/tree/master/docs)*.

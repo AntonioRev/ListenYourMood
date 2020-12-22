@@ -1,8 +1,6 @@
 const request = require('supertest')
 const app = require('../api/lista')
 
-app.close();
-
 describe('Peticiones a /generos', () => {
     test('Ver si devuelve 200 y la lista indicada', () => {
         patron = /([a-z]+(\,)?)+/;

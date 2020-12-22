@@ -18,7 +18,7 @@ const errorServer = {
 var accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), { flags: 'a' })
 
 var app = express();
-const port = process.env.PORT || 3000
+
 
 /** FUNCION MIDDLEWARE: 
  *  Generar un token necesario para hacer peticiones a spotify
@@ -383,11 +383,4 @@ app.get('/artista/:nombreArtista', function(req, res) {
     });
 
 
-
-
-
-var server = app.listen(port, () => {
-    console.log(`API escuchando en: http://localhost:${port}`)
-})
-
-  module.exports = server;
+  module.exports = app;
